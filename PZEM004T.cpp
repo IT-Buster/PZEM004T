@@ -26,9 +26,9 @@
 #ifdef PZEM004_SOFTSERIAL    
 PZEM004T::PZEM004T(uint8_t receivePin, uint8_t transmitPin)
 {
-    SoftwareSerial *port = new SoftwareSerial(receivePin, transmitPin);
-    port->begin(PZEM_BAUD_RATE);
-    this->serial = port;
+    ESPeasySerial *PZEM004T_easySerial = new ESPeasySerial(receivePin, transmitPin);
+    PZEM004T_easySerial->begin(PZEM_BAUD_RATE);
+    this->serial = PZEM004T_easySerial;
     this->_isSoft = true;
 }
 #endif
@@ -131,7 +131,7 @@ bool PZEM004T::recieve(uint8_t resp, uint8_t *data)
 
 #ifdef PZEM004_SOFTSERIAL    
     if(_isSoft)
-        ((SoftwareSerial *)serial)->listen();
+        ((ESPeasySerial *)serial)->listen();
 #endif
 
     unsigned long startTime = millis();

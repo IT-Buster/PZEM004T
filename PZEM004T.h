@@ -14,7 +14,8 @@
 #endif
 
 #if defined(PZEM004_SOFTSERIAL)
-#include <SoftwareSerial.h>
+#include <ESPeasySerial.h>
+
 #endif
 
 #include <IPAddress.h>

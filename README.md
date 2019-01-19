@@ -1,3 +1,5 @@
+20190119 : updated version to work with ESPEasy Mega new Softwareserial - also includes P171 ino file for ESPEasy
+
 # PZEM004T
 Arduino communication library for Peacefair PZEM-004T Energy monitor 
 
